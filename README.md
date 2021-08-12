@@ -8,7 +8,7 @@
 
 <p align="center">
  PartMonger inventory management application 
-</p>inventory
+</p>
 
 ## Getting Started
 
