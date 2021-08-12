@@ -1,13 +1,14 @@
-<p align="center">
-    <img alt="Gatsby" src="./src/assets/images/demo.png" width="400" />
-</p>
-
 <h1 align="center">
   PartMonger Inventory
 </h1>
+
 <p align="center">
-  Gatsby starter that uses all the extras to get you up and running with scalable architecture, and workflow as fast as possible.
+    <img alt="App demo image" src="./src/assets/images/demo.png" width="400" />
 </p>
+
+<p align="center">
+ PartMonger inventory management application 
+</p>inventory
 
 ## Getting Started
 
