@@ -1,15 +1,22 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="./src/assets/images/gatsby-tech.png" width="400" />
-  </a>
+    <img alt="Gatsby" src="./src/assets/images/demo.png" width="400" />
 </p>
 
 <h1 align="center">
-  Gatsby Scalable Starter
+  PartMonger Inventory
 </h1>
 <p align="center">
   Gatsby starter that uses all the extras to get you up and running with scalable architecture, and workflow as fast as possible.
 </p>
+
+## Getting Started
+
+```bash
+$ git clone git@github.com:LinnJS/partmonger-inventory.git
+
+$ cd partmonger-inventory
+$ yarn && yarn start
+```
 
 ## What's inside?
 
