@@ -17,8 +17,8 @@ const useAllParts = () => {
     getParts()
       .then((parts) => {
         const partsWithoutInActive = parts.filter((part) => part.isActive);
-
-        return setParts(partsWithoutInActive) && setIsLoading(false);
+        setIsLoading(false);
+        return setParts(partsWithoutInActive);
       })
       .catch((err) => {
         setError(err);
