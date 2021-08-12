@@ -19,7 +19,6 @@ export const query = graphql`
 
 const LandingPage = ({ data: { file } }) => {
   const [parts] = useAllParts();
-  console.log('parts: ', parts);
 
   return (
     <Layout>

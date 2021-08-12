@@ -3,9 +3,13 @@ import { GatsbyImage as Img } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 
 import ActionBar from '../components/ActionBar';
+import useOrderPart from '../utils/hooks/useOrderPart';
+import useCheckoutPart from '../utils/hooks/useCheckoutPart';
 
 const PartCard = ({ part, placeHolderImg }) => {
   const [quantity, setQuantity] = useState(1);
+  const [orderPart] = useOrderPart(part.id, quantity);
+  const [checkoutPart] = useCheckoutPart(part.id, quantity);
   const { id, image, name, description, cost, partNumber, inStock } = part;
 
   return (
@@ -33,7 +37,15 @@ const PartCard = ({ part, placeHolderImg }) => {
           )}
 
           <div className="w-full">
-            <ActionBar id={id} name={part.name} quantity={quantity} setQuantity={setQuantity} />
+            <ActionBar
+              orderPart={orderPart}
+              checkoutPart={checkoutPart}
+              inStock={inStock}
+              id={id}
+              name={part.name}
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
           </div>
         </div>
       </div>

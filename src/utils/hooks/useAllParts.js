@@ -1,21 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useAllParts = () => {
   const [parts, setParts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log('parts: ', parts);
+  const getParts = useCallback(async () => {
+    setIsLoading(true);
+    const res = await fetch('http://localhost:9001/parts');
+    const parts = await res.json();
+
+    return parts;
+  }, []);
 
   useEffect(() => {
-    const getParts = async () => {
-      setIsLoading(true);
-      const res = await fetch('http://localhost:9001/parts');
-      const parts = await res.json();
-
-      return parts;
-    };
-
     getParts()
       .then((parts) => {
         const partsWithoutInActive = parts.filter((part) => part.isActive);
@@ -26,7 +24,7 @@ const useAllParts = () => {
         setError(err);
         console.error(err);
       });
-  }, []);
+  }, [getParts]);
 
   return [parts, isLoading, error];
 };
